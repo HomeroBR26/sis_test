@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import re
 
 def b64_numbers(base64):
@@ -17,16 +18,15 @@ def b64_numbers_re(base64):
     return sorted_nums
 
 def main():
-    with open(r'base64.txt', r'r+') as base64_file:
+    with open(r'base64.txt', r'r') as base64_file:
         base64 = base64_file.read()
-        numbers = b64_numbers_re(base64)
-        # numbers = b64_numbers(base64)
+        # numbers = b64_numbers_re(base64)
+        numbers = b64_numbers(base64)
 
     with open(r'numbers.txt', r'wb') as numbers_file:
         numbers_file.write(str([n for n in numbers if n%2==0 or n%10==5 or n%10==7])[1:-1])
 
     print (numbers, len(numbers))
-    print [n for n in numbers if n%2==0 or n%10==5 or n%10==7]
 
 if __name__ == '__main__':
     main()
