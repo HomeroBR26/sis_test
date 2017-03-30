@@ -1,2 +1,2 @@
 Open your Linux terminal from this project's folder and run:
-$ bash RUN.sh
+$ time bash RUN.sh
